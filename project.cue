@@ -67,11 +67,11 @@ import "universe.dagger.io/docker"
 					workdir: "/lint"
 				}
 			},
-            // git init for pre-commit caching
+			// git init for pre-commit caching
 			bash.#Run & {
 				script: contents: """
-                    git init
-                """
+					    git init
+					"""
 			},
 			docker.#Copy & {
 				contents: filesystem

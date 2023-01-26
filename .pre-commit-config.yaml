@@ -39,3 +39,8 @@ repos:
       - id: terraform_validate
       - id: terraform_tflint
       - id: terraform_tfsec
+  # checking yaml formatting
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.9.0.2
+    hooks:
+      - id: shellcheck

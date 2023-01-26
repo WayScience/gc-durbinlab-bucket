@@ -7,17 +7,17 @@ variable "project" {
 # Region to be used with the project resources
 variable "region" {
   type    = string
-  default = "us-central1"
+  default = "europe-west4"
 }
 # Name for the bucket being created
 variable "bucket_name" {
   type    = string
-  default = "lab-initiative-bucket"
+  default = "waylab-assayworks-bucket"
 }
 # Label for specific initiative
 # useful for differentiating between
 # various resources
 variable "initiative_label" {
   type    = string
-  default = "lab-initiative"
+  default = "waylab-assayworks"
 }
