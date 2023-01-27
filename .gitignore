@@ -205,3 +205,5 @@ cue.mod/dagger.*
 
 # data ignores
 *.json
+*.zip
+*.tar.gz

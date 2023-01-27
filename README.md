@@ -26,7 +26,8 @@ See below for steps which are required for installation.
 1. [Clone the repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to your development environment.
 1. Install [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 1. Configure Terraform as necessary to your Google Cloud environment.
-1. __Optional__: make changes to script under `./utilities/example_gsutil_sync.sh` in preparation for synchronizing data to or from the bucket.
+1. __Optional__: make changes to script under `./utilities/example_gsutil_sync.bat` in preparation for synchronizing data to or from the bucket.
+
 
 ## :books:Tutorial
 
@@ -59,7 +60,8 @@ These steps cover an example of how to use the bucket with an example [gsutil](h
 1. Change directory into `./utilities`
 1. Ensure `service-account.json` key is found within `./utilities` directory (becomes available after infrastructure steps are taken with Terraform).
 1. Make changes to `gsutil rsync ...` line to specify the local data location and the target bucket.
-1. Run the `gsutil_sync.sh` script (for example: `sh ./gsutil_sync.sh`).
+1. Run the `gsutil_sync.bat` script by double clicking it or from a command line prompt (for example, by typing: `gsutil_sync.bat` and hitting the enter key).
+
 
 ## 🧑‍💻 Development
 
