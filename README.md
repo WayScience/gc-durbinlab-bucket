@@ -2,8 +2,20 @@
 
 ```mermaid
 flowchart LR
-    service-account -.-> files(("file(s)"))
-    files --> B[\Bucket/]
+    subgraph upload
+      files[("file(s)")]
+      assayworks["👤 Assay.Works"]
+
+    end
+    subgraph download
+      waylab["👤 Way Lab"]
+      files2[("file(s)")]
+    end
+    bucket[\"Cloud Storage\n Bucket"/]
+    files --> |to| bucket
+    assayworks --> |uploads| files
+    bucket --> |provides\naccess to| files2
+    files2 --> |received by| waylab
 
 ```
 
@@ -15,8 +27,9 @@ This repository uses [Terraform](https://developer.hashicorp.com/terraform/intro
 
 See below for an overview of roles which are important to context for various parts of this repository.
 
-- __Terraform Administrator__: this role involves administrating over cloud resources created with Terraform. Content found under the `terraform` directory and following steps under [Tutorial: Bucket Infrastructure](#bucket-infrastructure) apply to this role.
-- __Assay.Works Data Provider__: this role involves using content under `utilties` to synchronize (add, update, or remove) data to the bucket created by a Terraform Administrator. Instructions specific to this role are provided under [`utilities/README.md`](utilities/README.md).
+- __Terraform Administrator__: this role involves administrating over cloud resources created with Terraform. Content found under the `terraform` directory and following steps under [Tutorial: Bucket Infrastructure](#%EF%B8%8F-bucket-infrastructure) apply to this role.
+- __Assay.Works Data Provider__: this role involves using content under `utilties/assayworks` to synchronize (add, update, or remove) data to the bucket created by a Terraform Administrator. Instructions specific to this role are provided under [`utilities/assayworks/README.md`](utilities/assayworks/README.md).
+- __Way Lab Data Consumer__: this role is involved with downloading content from the bucket after it has been uploaded by Assay.Works. Associated content may be found under [`utilities/waylab/README.md`](utilities/waylab/README.md).
 
 ## 🛠️ Install
 
@@ -27,7 +40,6 @@ See below for steps which are required for installation.
 1. Install [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 1. Configure Terraform as necessary to your Google Cloud environment.
 1. __Optional__: make changes to script under `./utilities/example_gsutil_sync.bat` in preparation for synchronizing data to or from the bucket.
-
 
 ## :books:Tutorial
 
@@ -52,16 +64,13 @@ When finished with the work, optionally use the following step.
 
 ### 📁 Using the Bucket
 
-These steps cover an example of how to use the bucket with an example [gsutil](https://cloud.google.com/storage/docs/gsutil) script after creating the surrounding infrastructure. These steps presume `gsutil` has already been installed.
+These steps cover an example of how to use the bucket after creating the surrounding infrastructure.
 
 | <span style="text-align:left;float:left;font-weight:normal;"> ⚠️  Please note: be certain data you upload to Google Cloud abide any data governance or privacy restrictions applicable to your environment. The steps below do not inherently check or validate that data, the bucket, or the Google Cloud environment follow these policies. </span>   |
 |-----------------------------------------|
 
-1. Change directory into `./utilities`
-1. Ensure `service-account.json` key is found within `./utilities` directory (becomes available after infrastructure steps are taken with Terraform).
-1. Make changes to `gsutil rsync ...` line to specify the local data location and the target bucket.
-1. Run the `gsutil_sync.bat` script by double clicking it or from a command line prompt (for example, by typing: `gsutil_sync.bat` and hitting the enter key).
-
+- Data Upload (Assay.Works): please see [`utilities/assayworks/README.md`](utilities/assayworks/README.md) for more information.
+- Data Download (Way Lab): please see [`utilities/waylab/README.md`](utilities/waylab/README.md) for more information.
 
 ## 🧑‍💻 Development
 
