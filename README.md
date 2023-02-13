@@ -45,6 +45,18 @@ See below for steps which are required for installation.
 
 See below for brief tutorials on how to implement the work found in this repository for your needs.
 
+### 🎛️ State Management
+
+These steps cover how to store [Terraform state management](https://developer.hashicorp.com/terraform/language/state) files in association with the bucket infrastructure below. Terraform tracks cloud resources it creates as a statefile (`.tfstate`). If multiple people want to manage the same resources at the same time, they all need to have access to the same statefile or else they overwriting or corrupting state data. One option for sharing this statefile is to use a Google Cloud Bucket, which is the option used here.
+
+Note: Terraform cloud state management must be setup before it is referenced as a backend.
+
+1. Make adjustments to the content as necessary (for example, this readme file).
+1. Fill in [terraform/state-management/variables.tf](terraform/variables.tf) with values that make sense for your initiative.
+1. Terraform __init__: to ensure Terraform is initialized use command `terraform -chdir=terraform/state-management init`.
+1. Terraform __plan__: to plan the work and observe any needs use command `terraform -chdir=terraform/state-management plan` .
+1. Terraform __apply__: to apply the work and create resources use command `terraform -chdir=terraform/state-management apply`
+
 ### 🏗️ Bucket Infrastructure
 
 These steps cover how to control the infrastructure found within this repository.
@@ -53,14 +65,14 @@ These steps cover how to control the infrastructure found within this repository
 |-----------------------------------------|
 
 1. Make adjustments to the content as necessary (for example, this readme file).
-1. Fill in [terraform/variables.tf](terraform/variables.tf) with values that make sense for your initiative.
-1. Terraform __init__: to ensure Terraform is initialized use command `terraform -chdir=terraform init`.
-1. Terraform __plan__: to plan the work and observe any needs use command `terraform -chdir=terraform plan` .
-1. Terraform __apply__: to apply the work and create resources use command `terraform -chdir=terraform apply`
+1. Fill in [terraform/operations/variables.tf](terraform/variables.tf) with values that make sense for your initiative.
+1. Terraform __init__: to ensure Terraform is initialized use command `terraform -chdir=terraform/operations init`.
+1. Terraform __plan__: to plan the work and observe any needs use command `terraform -chdir=terraform/operations plan` .
+1. Terraform __apply__: to apply the work and create resources use command `terraform -chdir=terraform/operations apply`
 
 When finished with the work, optionally use the following step.
 
-- __OPTIONAL__: Terraform __destroy__: to destroy all created resources use command `terraform -chdir=terraform destroy`
+- __OPTIONAL__: Terraform __destroy__: to destroy all created resources use command `terraform -chdir=terraform/operations destroy`
 
 ### 📁 Using the Bucket
 

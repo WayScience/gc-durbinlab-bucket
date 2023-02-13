@@ -207,3 +207,6 @@ cue.mod/dagger.*
 *.json
 *.zip
 *.tar.gz
+
+# terraform ignores
+hashicorp/
