@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "gc-assayworks-bucket"
+name = "gc-durbinlab-bucket"
 version = "0.0.1"
-description = "Cloud Storage bucket on Google Cloud for Assay.Works data transfer."
+description = "Cloud Storage bucket on Google Cloud for Durbin Lab data transfer."
 authors = ["d33bs <dave.bunten@cuanschutz.edu>"]
 license = "BSD-3-Clause license"
 readme = "README.md"
