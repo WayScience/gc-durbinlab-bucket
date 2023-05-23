@@ -5,16 +5,16 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3.5 |
-| <a name="requirement_google"></a> [google](#requirement\_google) | ~> 4.50.0 |
-| <a name="requirement_local"></a> [local](#requirement\_local) | ~> 2.3.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.4.6 |
+| <a name="requirement_google"></a> [google](#requirement\_google) | ~> 4.66.0 |
+| <a name="requirement_local"></a> [local](#requirement\_local) | ~> 2.4.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 4.50.0 |
-| <a name="provider_local"></a> [local](#provider\_local) | 2.3.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | 4.66.0 |
+| <a name="provider_local"></a> [local](#provider\_local) | 2.4.0 |
 
 ## Modules
 
