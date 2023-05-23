@@ -39,7 +39,6 @@ See below for steps which are required for installation.
 1. [Clone the repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to your development environment.
 1. Install [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 1. Configure Terraform as necessary to your Google Cloud environment.
-1. __Optional__: make changes to script under `./utilities/example_gsutil_sync.bat` in preparation for synchronizing data to or from the bucket.
 
 ## :books:Tutorial
 

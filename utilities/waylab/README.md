@@ -28,9 +28,3 @@ The general procedure for gaining access to data stored within a Cloud Storage b
 1. Download or synchronize data found within bucket by using [`rclone` commands](https://rclone.org/commands/).
    - Please note: many rclone commands are recursive __by default__ with options to disable.
    - An example with the copy command: `rclone copy <configured_name>:waylab-durbinlab-bucket`
-
-## Other Tools
-
-This section is provided to share the availability of similar tools which are available to perform this work.
-
-- [gsutil](https://cloud.google.com/storage/docs/gsutil): "gsutil is a Python application \[provided by Google\] that lets you access Cloud Storage from the command line."
