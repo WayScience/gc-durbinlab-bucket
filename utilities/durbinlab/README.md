@@ -21,6 +21,6 @@ We suggest using [`rclone`](https://rclone.org) to assist with data uploads to t
 ## Frequently Asked Questions (FAQ)
 
 - __Question__: What should I do if I see the error: `"Error 400: Cannot insert legacy ACL for an object when uniform bucket-level access is enabled."`?
-- __Answer__: Try using the following:
+- __Answer__: Try using one of the following options (only one is needed):
   - Add an environment variable like the following (command may vary based on operating system): `export RCLONE_GCS_BUCKET_POLICY_ONLY=true`
   - Use an additional command-line flag `rclone --gcs-bucket-policy-only ...<the rest of your command goes here>...`
